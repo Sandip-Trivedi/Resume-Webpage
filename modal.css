@@ -1,0 +1,104 @@
+/* ========================================================
+   UNIFIED TWO-COLOR SYSTEM MODAL DIALOG SCHEMA
+   ======================================================== */
+
+   .modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(26, 37, 47, 0.75); /* Theme Dark Slate with opacity */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+}
+
+.modal-box {
+    background: #ffffff;
+    padding: 2.2rem;
+    border-radius: 12px;
+    width: 90%;
+    max-width: 420px;
+    box-shadow: 0 15px 35px rgba(26, 37, 47, 0.15);
+    text-align: center;
+    border: 1px solid #e9ecef;
+    animation: modalSlideIn 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.modal-box h3 {
+    color: #2c3e50; /* Theme Primary Dark */
+    font-size: 1.3rem;
+    margin-bottom: 0.75rem;
+}
+
+.modal-box p {
+    font-size: 0.95rem;
+    color: #555;
+    line-height: 1.5;
+}
+
+.modal-box code {
+    display: block;
+    background: #f8f9fa;
+    padding: 0.6rem;
+    border-radius: 6px;
+    margin: 1.2rem 0;
+    word-break: break-all;
+    font-size: 0.85rem;
+    color: #2c3e50;
+    border: 1px solid #e9ecef;
+}
+
+.modal-actions {
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+}
+
+/* 🎨 Theme Button 1: Solid Accent Color Actions */
+.m-btn {
+    padding: 0.75rem;
+    border: none;
+    border-radius: 6px;
+    font-weight: bold;
+    cursor: pointer;
+    font-size: 0.95rem;
+    transition: background-color 0.15s, transform 0.1s;
+    width: 100%;
+}
+
+.m-btn:active {
+    transform: scale(0.99);
+}
+
+.m-btn-primary, 
+.m-btn-secondary {
+    background: #3498db; /* Theme Accent Blue */
+    color: white;
+}
+
+.m-btn-primary:hover, 
+.m-btn-secondary:hover {
+    background: #2980b9; /* Slightly darker shade of accent blue on hover */
+}
+
+/* 🎨 Theme Button 2: Minimalist Outline Border for Close/Cancel Actions */
+.m-btn-close {
+    background: transparent;
+    color: #7f8c8d;
+    border: 1px solid #bdc3c7;
+    margin-top: 0.25rem;
+}
+
+.m-btn-close:hover {
+    background: #f8f9fa;
+    color: #2c3e50;
+    border-color: #7f8c8d;
+}
+
+@keyframes modalSlideIn {
+    from { opacity: 0; transform: translateY(8px) scale(0.98); }
+    to { opacity: 1; transform: translateY(0) scale(1); }
+}

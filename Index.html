@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio - Sandip Trivedi</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="modal.css">
+    <script src="strings.js"></script>
+</head>
+<body>
+    <div class="app-container">
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <div class="avatar-container">
+                    <img src="https://drive.google.com/thumbnail?id=1tO1EBm4-cXJf8rjVJvpWrWIBNNjd-O4B&sz=w140" alt="Sandip Trivedi" class="sandipPhoto" onerror="this.src=''">
+                </div>
+                <h2 id="profile-name">Loading...</h2>
+                <p id="profile-title" class="subtitle"></p>
+            </div>
+            <div class="action-panel">
+                <a id="btn-download" download title="Download Resume" class="action-btn">Download CV</a>
+                <a id="btn-email" title="Send Email" class="action-btn">Email me</a>
+                <a id="btn-call" title="Call Me" class="action-btn">Call me</a>
+                <a id="btn-linkedin" target="_blank" title="LinkedIn Profile" class="action-btn">LinkedIn</a>
+                <a id="btn-git" target="_blank" title="GitHub / Git Profile" class="action-btn">Git</a>
+            </div>
+        </aside>
+        <main class="main-content">
+            <section id="about" class="content-section">
+                <h2 id="summary-title"></h2>
+                <p id="summary-text"></p>
+            </section>
+            <section id="tech" class="content-section">
+                <h2 id="tech-title"></h2>
+                <ul id="tech-list" class="skills-list"></ul>
+            </section>
+            <section id="experience" class="content-section">
+                <h2 id="exp-title"></h2>
+                <div id="exp-container"></div>
+            </section>
+            <section id="projects" class="content-section">
+                <h2 id="projects-title"></h2>
+                <div id="projects-grid" class="projects-grid"></div>
+            </section>
+            <section id="personal-section" class="content-section">
+                <h2 id="personal-title"></h2>
+                <div id="personal-container" class="personal-grid"></div>
+            </section>
+
+        </main>
+    </div>
+    <script src="modal.js"></script>
+</body>
+</html>

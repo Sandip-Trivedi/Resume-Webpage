@@ -1,0 +1,302 @@
+:root {
+    --primary-color: #2c3e50;
+    --accent-color: #3498db;
+    --bg-dark: #1a252f;
+    --text-color: #333;
+    --light-gray: #f8f9fa;
+    --border-color: #e9ecef;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+}
+
+body {
+    background-color: #ffffff;
+    color: var(--text-color);
+}
+
+/* Page Frame Structure split into Sidebar + Content Grid */
+.app-container {
+    display: flex;
+    min-height: 100vh;
+}
+
+/* Sidebar Styling */
+.sidebar {
+    width: 320px;
+    background-color: var(--bg-dark);
+    color: #fff;
+    padding: 2.5rem 1.5rem;
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    height: 100vh;
+    overflow-y: auto;
+}
+
+.sidebar-header {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centers the image container horizontally */
+    margin-bottom: 2rem;
+
+}
+
+/* 4) Profile picture at top styling */
+/* 1. The Circular Container Mask */
+.avatar-container {
+    width: 130px;          /* Sets the fixed width of your circle */
+    height: 130px;         /* Sets the matching fixed height */
+    margin: 0rem auto 1rem auto; /* The "0 auto" centers the entire circle horizontally */
+    border-radius: 50%;    /* Turns the square box into a perfect circle */
+    overflow: hidden;      /* Crops out any parts of the image sticking outside the circle */
+    border: 3px solid var(--accent-color); /* Adds your accent color border ring */
+    display: flex;         /* Prepares a flex alignment fallback */
+    justify-content: center;
+    align-items: center;
+}
+
+/* 2. The Centered Dynamic Image Crop */
+.profile-pic {
+    object-fit: cover;     /* CRITICAL: Centers and clips the photo without stretching it */
+    object-position: center top; /* Optional: Slightly favors keeping the top/head in view */
+}
+
+
+.sidebar h2 {
+    font-size: 1.4rem;
+    margin-bottom: 0.5rem;
+}
+
+.subtitle {
+    font-size: 0.85rem;
+    color: #bdc3c7;
+    line-height: 1.3;
+}
+
+/* Navigation inside sidebar */
+.sidebar-nav {
+    margin-bottom: 2rem;
+}
+
+.sidebar-nav a {
+    display: block;
+    color: #ecf0f1;
+    text-decoration: none;
+    padding: 0.75rem 1rem;
+    margin-bottom: 0.5rem;
+    border-radius: 4px;
+    transition: background 0.2s;
+}
+
+/* 1) Action buttons matrix panel styles */
+.action-panel {
+    margin-top: 0rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+}
+
+.action-btn {
+    display: block;
+    text-align: center;
+    background-color: var(--accent-color);
+    color: white;
+    text-decoration: none;
+    padding: 0.6rem;
+    border-radius: 6px;
+    font-size: 0.9rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: opacity 0.2s;
+}
+
+.action-btn:hover {
+    opacity: 0.9;
+}
+
+/* Main content window viewport layout offset */
+.main-content {
+    margin-left: 320px;
+    padding: 3rem;
+    width: calc(100% - 320px);
+}
+
+.content-section {
+    margin-bottom: 4rem;
+    scroll-margin-top: 2rem;
+}
+
+.content-section h2 {
+    color: var(--primary-color);
+    margin-bottom: 1.5rem;
+    border-bottom: 2px solid var(--border-color);
+    padding-bottom: 0.5rem;
+}
+
+p {
+    line-height: 1.6;
+    margin-bottom: 1rem;
+}
+
+.skills-list {
+    margin-left: 1.2rem;
+    line-height: 1.8;
+}
+
+/* Professional Timeline */
+.experience-card {
+    background: var(--light-gray);
+    padding: 1.2rem;
+    border-left: 4px solid var(--primary-color);
+    margin-bottom: 1rem;
+    border-radius: 0 4px 4px 0;
+}
+
+.experience-card span {
+    color: var(--accent-color);
+}
+
+/* 5) Project Showcase Cards Grid Layout setup */
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 1.5rem;
+    margin-top: 1.5rem;
+}
+
+.project-card {
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    padding: 1.5rem;
+    background: #fff;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.02);
+    display: flex;
+    flex-direction: column;
+}
+
+.project-card h3 {
+    font-size: 1.15rem;
+    margin-bottom: 0.5rem;
+    color: var(--primary-color);
+}
+
+.tech-badge {
+    display: inline-block;
+    font-size: 0.75rem;
+    background-color: #e8f4fd;
+    color: var(--accent-color);
+    padding: 0.2rem 0.5rem;
+    border-radius: 4px;
+    font-weight: 600;
+    margin-bottom: 0.8rem;
+    align-self: flex-start;
+}
+
+.project-card p {
+    font-size: 0.9rem;
+    color: #666;
+    flex-grow: 1;
+}
+
+.project-link {
+    text-decoration: none;
+    color: var(--accent-color);
+    font-weight: bold;
+    font-size: 0.85rem;
+    margin-top: 1rem;
+    display: inline-block;
+}
+
+/* Layout responsiveness configurations */
+@media(max-width: 768px) {
+    .app-container {
+        flex-direction: column;
+    }
+    .sidebar {
+        width: 100%;
+        position: relative;
+        height: auto;
+    }
+    .main-content {
+        width: 100%;
+        margin-left: 0;
+        padding: 1.5rem;
+    }
+}
+
+/* Personal Details Grid Blocks Typography layout definitions */
+.personal-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    gap: 1rem;
+    background: var(--light-gray);
+    padding: 1.5rem;
+    border-radius: 8px;
+    margin-top: 1rem;
+}
+
+.detail-row {
+    font-size: 0.95rem;
+    line-height: 1.5;
+}
+
+.detail-row strong {
+    color: var(--primary-color);
+}
+
+
+.projects-grid, 
+.nested-projects-container {
+    display: grid !important;
+    /* 📱 Mobile First: 1 full-width column by default */
+    grid-template-columns: 1fr !important; 
+    gap: 1.5rem !important;
+    width: 100% !important;
+    height: auto !important; /* 🌟 Crucial: ensures container scales cleanly with content */
+}
+
+/* 2. Reset Individual Card Rules */
+.project-card, 
+.nested-project-card {
+    width: 100% !important;
+    max-width: 100% !important;
+    display: flex !important;
+    flex-direction: column !important;
+}
+
+/* ========================================================
+   DESKTOP RESPONSIVE BREAKPOINT (> 768px)
+   ======================================================== */
+@media (min-width: 769px) {
+    /* 🖥️ Desktop: Dynamically switches layout to max 2 cards per horizontal line */
+    .projects-grid, 
+    .nested-projects-container {
+        grid-template-columns: repeat(2, 1fr) !important; 
+    }
+
+    /* 🌟 Force full collapse of target layouts so hidden blocks leave no blank spaces */
+    .hide-on-desktop {
+        display: none !important;
+        visibility: hidden !important;
+        opacity: 0 !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        height: 0 !important;
+    }
+}
+
+/* 3. Safe Hiding Rule (Forces remaining content below to slide up) */
+
+@media (min-width: 769px) {
+    .hide-on-desktop {
+        /* display: none removes the element entirely from the render tree,
+           causing the elements below it to move up instantly */
+        display: none !important; 
+    }
+}
