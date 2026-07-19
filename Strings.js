@@ -120,7 +120,7 @@ const ResumeStrings = {
     personalDetailsTitle: "Personal Profile Details",
     personalDetails: [
         { label: "Full Name", value: "Sandip Trivedi" },
-        { label: "Current Location", value: "Ahmedabad, Gujarat, India" },
+        { label: "Current Location", value: "Bengaluru, India" },
         { label: "Nationality", value: "Indian" },
         { label: "Languages", value: "English, Hindi, Gujarati" }
     ]
