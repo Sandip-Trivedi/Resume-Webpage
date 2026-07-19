@@ -134,7 +134,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // Contact CTA buttons
     document.getElementById("btn-download").href = ResumeStrings.resumeDownloadUrl;
-    // document.getElementById("btn-email").href = `mailto:${ResumeStrings.email}`;
+    document.getElementById("btn-email").href = `mailto:${ResumeStrings.email}`;
     document.getElementById("btn-call").href = `tel:${ResumeStrings.phone}`;
     document.getElementById("btn-git").href = ResumeStrings.github;
 
@@ -169,29 +169,31 @@ document.addEventListener("DOMContentLoaded", () => {
     ResumeStrings.experiences.forEach(exp => {
         let block = document.createElement("div");
         block.className = "experience-card";
-
         const descMarkup = Array.isArray(exp.desc)
             ? exp.desc.map(point => `<div class="experience-point">${point}</div>`).join("")
             : `<div class="experience-point">${exp.desc}</div>`;
 
         block.innerHTML = `
-            <h4>${exp.role} <span>@ ${exp.company}</span></h4>
+            <h4>${exp.role} <span> | ${exp.company}</span></h4>
             <small>${exp.duration}</small>
             <div class="experience-body">
                 ${descMarkup}
             </div>
-            <div class="experience-meta">
-                <span>Products Delivered:</span> ${exp.products}
-            </div>
-            <div class="nested-projects-container"></div>
-            <div class="experience-meta">
-                <span>Technologies Used:</span> ${exp.technologies}
-            </div>
+         ${exp.products && exp.products.trim() !== "" ? `
+        <div class="experience-meta">
+            <span>Products Delivered:</span> ${exp.products}
+        </div>
+        ` : ""}
+
+        ${exp.technologies && exp.technologies.trim() !== "" ? `
+        <div class="experience-meta">
+            <span>Technologies Used:</span> ${exp.technologies}
+        </div>
+        ` : ""}
             <div class="nested-projects-container"></div>
         `;
         expDiv.appendChild(block);
 
-        // 2. Find the nested-projects-container we just injected into THIS specific company block
         const nestedContainer = block.querySelector(".nested-projects-container");
 
         // 3. Loop through and append projects directly to this company card
@@ -258,55 +260,3 @@ const renderExperienceMeta = (exp) => {
         technologiesBlock
     ].filter(Boolean).join("\n");
 };
-
-
-// experiences: [
-//     { role: "Sr. Software Engineer - Mobile", company: "3M TCoE", duration: "Nov 2021 - Current",desc:'Create structure containing job details and an empty container for its nested projectsCreate structure containing job details and an empty container for its nested projectsCreate structure containing job details and an empty container for its nested projectsCreate structure containing job details and an empty container for its nested projectsCreate structure containing job details and an empty container for its nested projects',
-//     projects: [
-//         {
-//             name: "DR TRUST (360 Health Companion)",
-//             tech: "SwiftUI | Core BLE | Realm | Machine Learning",
-//             desc: "US and Indian Health monitoring app with 100k+ users. Connects to Bluetooth weighing machines, BP apparatuses, and portable ECGs seamlessly.",
-//             link: "https://apple.com"
-//         },
-//         {
-//             name: "POST IT",
-//             tech: "Swift | Core Data | Clean Architecture | MVVM",
-//             desc: "Iconic note-taking application designed with dynamic graphic add-ons and millions of active users worldwide.",
-//             link: "https://apple.com"
-//         },
-//         {
-//             name: "3M SAFE GUARD",
-//             tech: "QR Code Scanning | Core ML | AR Mask | Vision",
-//             desc: "An enterprise-grade anti-counterfeit QR Code scanning application that uses machine learning to determine product authenticity.",
-//             link: "https://apple.com"
-//         }]
-//     },
-//     { role: "Lead Consultant", company: "ITC Infotech", duration: "Feb 2020 – Oct 2021" ,desc:'desc',
-//     projects: [
-//         {
-//             name: "DR TRUST (360 Health Companion)",
-//             tech: "SwiftUI | Core BLE | Realm | Machine Learning",
-//             desc: "US and Indian Health monitoring app with 100k+ users. Connects to Bluetooth weighing machines, BP apparatuses, and portable ECGs seamlessly.",
-//             link: "https://apple.com"
-//         },
-//         {
-//             name: "3M SAFE GUARD",
-//             tech: "QR Code Scanning | Core ML | AR Mask | Vision",
-//             desc: "An enterprise-grade anti-counterfeit QR Code scanning application that uses machine learning to determine product authenticity.",
-//             link: "https://apple.com"
-//         }]},
-//     { role: "Full Stack Mobile App Developer", company: "Freelance", duration: "Oct 2018 – Jan 2020",desc:'desc',         projects: [
-//         {
-//             name: "DR TRUST (360 Health Companion)",
-//             tech: "SwiftUI | Core BLE | Realm | Machine Learning",
-//             desc: "US and Indian Health monitoring app with 100k+ users. Connects to Bluetooth weighing machines, BP apparatuses, and portable ECGs seamlessly.",
-//             link: "https://apple.com"
-//         },
-//         {
-//             name: "3M SAFE GUARD",
-//             tech: "QR Code Scanning | Core ML | AR Mask | Vision",
-//             desc: "An enterprise-grade anti-counterfeit QR Code scanning application that uses machine learning to determine product authenticity.",
-//             link: "https://apple.com"
-//         }]}
-// ],

@@ -42,7 +42,8 @@ body {
     text-align: center;
     display: flex;
     flex-direction: column;
-    align-items: center; /* Centers the image container horizontally */
+    align-items: center;
+    /* Centers the image container horizontally */
     margin-bottom: 2rem;
 
 }
@@ -50,21 +51,30 @@ body {
 /* 4) Profile picture at top styling */
 /* 1. The Circular Container Mask */
 .avatar-container {
-    width: 130px;          /* Sets the fixed width of your circle */
-    height: 130px;         /* Sets the matching fixed height */
-    margin: 0rem auto 1rem auto; /* The "0 auto" centers the entire circle horizontally */
-    border-radius: 50%;    /* Turns the square box into a perfect circle */
-    overflow: hidden;      /* Crops out any parts of the image sticking outside the circle */
-    border: 3px solid var(--accent-color); /* Adds your accent color border ring */
-    display: flex;         /* Prepares a flex alignment fallback */
+    width: 130px;
+    /* Sets the fixed width of your circle */
+    height: 130px;
+    /* Sets the matching fixed height */
+    margin: 0rem auto 1rem auto;
+    /* The "0 auto" centers the entire circle horizontally */
+    border-radius: 50%;
+    /* Turns the square box into a perfect circle */
+    overflow: hidden;
+    /* Crops out any parts of the image sticking outside the circle */
+    border: 3px solid var(--accent-color);
+    /* Adds your accent color border ring */
+    display: flex;
+    /* Prepares a flex alignment fallback */
     justify-content: center;
     align-items: center;
 }
 
 /* 2. The Centered Dynamic Image Crop */
 .profile-pic {
-    object-fit: cover;     /* CRITICAL: Centers and clips the photo without stretching it */
-    object-position: center top; /* Optional: Slightly favors keeping the top/head in view */
+    object-fit: cover;
+    /* CRITICAL: Centers and clips the photo without stretching it */
+    object-position: center top;
+    /* Optional: Slightly favors keeping the top/head in view */
 }
 
 
@@ -169,7 +179,7 @@ p {
 }
 
 .experience-card span {
-    color: var(--accent-color);
+    color: var(--primary-color);
 }
 
 .experience-body {
@@ -207,7 +217,7 @@ p {
     border-radius: 8px;
     padding: 1.5rem;
     background: #fff;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.02);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.02);
     display: flex;
     flex-direction: column;
 }
@@ -250,11 +260,13 @@ p {
     .app-container {
         flex-direction: column;
     }
+
     .sidebar {
         width: 100%;
         position: relative;
         height: auto;
     }
+
     .main-content {
         width: 100%;
         margin-left: 0;
@@ -283,18 +295,19 @@ p {
 }
 
 
-.projects-grid, 
+.projects-grid,
 .nested-projects-container {
     display: grid !important;
     /* 📱 Mobile First: 1 full-width column by default */
-    grid-template-columns: 1fr !important; 
+    grid-template-columns: 1fr !important;
     gap: 1.5rem !important;
     width: 100% !important;
-    height: auto !important; /* 🌟 Crucial: ensures container scales cleanly with content */
+    height: auto !important;
+    /* 🌟 Crucial: ensures container scales cleanly with content */
 }
 
 /* 2. Reset Individual Card Rules */
-.project-card, 
+.project-card,
 .nested-project-card {
     width: 100% !important;
     max-width: 100% !important;
@@ -306,10 +319,11 @@ p {
    DESKTOP RESPONSIVE BREAKPOINT (> 768px)
    ======================================================== */
 @media (min-width: 769px) {
+
     /* 🖥️ Desktop: Dynamically switches layout to max 2 cards per horizontal line */
-    .projects-grid, 
+    .projects-grid,
     .nested-projects-container {
-        grid-template-columns: repeat(2, 1fr) !important; 
+        grid-template-columns: repeat(2, 1fr) !important;
     }
 
     /* 🌟 Force full collapse of target layouts so hidden blocks leave no blank spaces */
@@ -329,6 +343,6 @@ p {
     .hide-on-desktop {
         /* display: none removes the element entirely from the render tree,
            causing the elements below it to move up instantly */
-        display: none !important; 
+        display: none !important;
     }
 }
