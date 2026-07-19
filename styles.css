@@ -158,8 +158,40 @@ p {
     border-radius: 0 4px 4px 0;
 }
 
+.experience-card h4 {
+    margin-bottom: 0.3rem;
+}
+
+.experience-card small {
+    display: inline-block;
+    margin-bottom: 0.8rem;
+    color: #6c757d;
+}
+
 .experience-card span {
     color: var(--accent-color);
+}
+
+.experience-body {
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+    margin-top: 0.2rem;
+}
+
+.experience-point {
+    position: relative;
+    padding-left: 1rem;
+    color: #495057;
+    line-height: 1.6;
+}
+
+.experience-point::before {
+    content: "•";
+    position: absolute;
+    left: 0;
+    color: var(--accent-color);
+    font-weight: 700;
 }
 
 /* 5) Project Showcase Cards Grid Layout setup */
