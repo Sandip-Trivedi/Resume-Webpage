@@ -6,7 +6,7 @@ const ResumeStrings = {
     email: "sandiptrivedi07@gmail.com",
     linkedin: "https://www.linkedin.com/in/sandip-trivedi-6a558323",
     github: "https://github.com/Sandip-Trivedi", // Placeholder Git link
-    resumeDownloadUrl: "https://drive.google.com/file/d/1-yR3Kw42zVP7ukMaQEnRkaWCwtPh_nmV/view?usp=sharing", // Add your uploaded PDF link here
+    resumeDownloadUrl: "https://drive.google.com/file/d/1gB6rWEk0BBe-KBsj6wyE7he4TghzL0UL/view?usp=sharing", // Add your uploaded PDF link here
     profilePicUrl: "https://drive.google.com/thumbnail?id=1tO1EBm4-cXJf8rjVJvpWrWIBNNjd-O4B&sz=w140",
     navExperience: "Professional Experience",
 
@@ -91,30 +91,114 @@ const ResumeStrings = {
 
     // Featured Projects
     projectsTitle: "App Portfolios",
-    projects: [
+    "projects": [
         {
-            name: "DR TRUST (360 Health Companion)",
-            tech: "SwiftUI | Core BLE | Realm | Machine Learning",
-            desc: "US and Indian Health monitoring app with 100k+ users. Connects to Bluetooth weighing machines, BP apparatuses, and portable ECGs seamlessly.",
-            link: "https://apple.com"
+            "name": "DR TRUST (360 Health Companion)",
+            "tech": "Swift | Swift Concurrency | BLE | Core Animation",
+            "desc": [
+                "Led the development of a health monitoring application serving 100K+ users across India and the US while leading and mentoring a team of 4 mobile engineers.",
+                "Designed a scalable, thread-safe architecture using Swift Concurrency and integrated BLE health devices (weighing scales, BP apparatuses, ECGs) for secure real-time data sync.",
+                "Built interactive health dashboards with custom Core Animation visualizations and achieved 90% unit test coverage for critical service-layer components."
+            ],
+            "link": "https://apple.com"
         },
         {
-            name: "POST IT",
-            tech: "Swift | Core Data | Clean Architecture | MVVM",
-            desc: "Iconic note-taking application designed with dynamic graphic add-ons and millions of active users worldwide.",
-            link: "https://apple.com"
+            "name": "DIGITAL MATERIAL HUB",
+            "tech": "React.js | TypeScript | React Hooks | Context API | REST APIs",
+            "desc": [
+                "Developed reusable React.js components and responsive user interfaces using TypeScript, React Hooks, and Context API for an enterprise digital asset management platform.",
+                "Integrated REST APIs and implemented state management to deliver scalable, maintainable, and high-performance web features.",
+                "Collaborated with UX designers and backend engineers to deliver enterprise-grade user experiences."
+            ],
+            "link": "https://website.com"
         },
         {
-            name: "3M SAFE GUARD",
-            tech: "QR Code Scanning | Core ML | AR Mask | Vision",
-            desc: "An enterprise-grade anti-counterfeit QR Code scanning application that uses machine learning to determine product authenticity.",
-            link: "https://apple.com"
+            "name": "STANDARD TAP APPLICATOR (BLE/IoT)",
+            "tech": "IoT | BLE | Solution Architecture | Workflow Optimization",
+            "desc": [
+                "Architected an IoT-enabled mobile application for configuring and monitoring industrial dispensing equipment through secure Bluetooth Low Energy (BLE) communication.",
+                "Implemented real-time device connectivity, data synchronization, and configuration workflows while optimizing application performance and ensuring reliable hardware communication."
+            ],
+            "link": "https://apple.com"
         },
         {
-            name: "HOME CONNECT",
-            tech: "Home Automation | IoT | Core Animation | MVVM",
-            desc: "A powerful smart automation ecosystem application allowing users to monitor and operate home appliances remotely.",
-            link: "https://apple.com"
+            "name": "SENSERA WI-FI",
+            "tech": "BLE | Wi-Fi | MVVM | Combine Framework | Custom SDK",
+            "desc": [
+                "Built a smart camera configuration application enabling secure device provisioning and communication over Bluetooth Low Energy (BLE) and Wi-Fi.",
+                "Integrated a custom BLE SDK to establish secure communication between mobile devices and network-enabled cameras during onboarding and provisioning.",
+                "Implemented MVVM architecture and Combine framework to deliver responsive, maintainable, and scalable application workflows."
+            ],
+            "link": "https://apple.com"
+        },
+        {
+            "name": "HOME CONNECT",
+            "tech": "Home Automation | IoT | Wi-Fi | Asynchronous API | Automation",
+            "desc": [
+                "Integrated mobile applications with connected home appliances, enabling secure device communication, remote configuration, and real-time monitoring through Wi-Fi.",
+                "Optimized asynchronous API communication, offline synchronization, and intelligent automation workflows based on sensor data to improve application reliability."
+            ],
+            "link": "https://apple.com"
+        },
+        {
+            "name": "POST IT",
+            "tech": "Swift | Core Data | Clean Architecture | MVVM",
+            "desc": [
+                "Delivered features for a collaborative productivity application supporting digital note creation, synchronization, and team collaboration.",
+                "Designed with dynamic graphic add-ons to serve millions of active users worldwide using Clean Architecture and MVVM patterns."
+            ],
+            "link": "https://apple.com"
+        },
+        {
+            "name": "LITTMANN LEARNING",
+            "tech": "Mobile Learning | Multimedia Playback | Security | Authentication",
+            "desc": [
+                "Developed features for a mobile learning platform providing interactive educational content, secure authentication, multimedia playback, and progress tracking."
+            ],
+            "link": "https://apple.com"
+        },
+        {
+            "name": "COLOUR WITH ASIAN PAINTS",
+            "tech": "Image Processing | Interactive UI | Reusable Components",
+            "desc": [
+                "Contributed to the development of a consumer-facing color visualization application by implementing image processing capabilities, reusable UI components, and interactive user experiences."
+            ],
+            "link": "https://apple.com"
+        },
+        {
+            "name": "3M SAFE GUARD",
+            "tech": "QR Code Scanning | Core ML | AR Mask | Vision",
+            "desc": [
+                "Implemented enterprise mobile capabilities focused on secure authentication, user access management, and business workflow automation.",
+                "Engineered anti-counterfeit QR Code scanning capabilities using machine learning models to determine product authenticity."
+            ],
+            "link": "https://apple.com"
+        },
+        {
+            "name": "REWARDLE",
+            "tech": "Digital Wallet | Mobile Payments | Reward Management | Merchant Workflows",
+            "desc": [
+                "Engineered features for Australia's leading customer loyalty and digital wallet platform, implementing rewards management, mobile payments, and digital memberships.",
+                "Developed scalable merchant workflows for consumer and business applications."
+            ],
+            "link": "https://apple.com"
+        },
+        {
+            "name": "EMISSION CONTROLLER",
+            "tech": "Mobile IoT | Real-Time Data | Analytics Dashboards",
+            "desc": [
+                "Built a mobile IoT solution for monitoring industrial equipment emissions, collecting real-time operational data, and presenting analytics through intuitive dashboards."
+            ],
+            "link": "https://apple.com"
+        },
+        {
+            "name": "VIRTUAL GUIDE (Enterprise AR)",
+            "tech": "Augmented Reality (AR) | Image Recognition | Indoor Navigation | Offline Maps",
+            "desc": [
+                "Contributed to the development of an enterprise augmented reality application enabling indoor navigation, image recognition, and QR-based location guidance.",
+                "Implemented offline campus maps and shortest-path navigation algorithms to optimize user routing."
+            ],
+            "link": "https://apple.com"
         }
     ],
     personalDetailsTitle: "Personal Profile Details",
@@ -222,7 +306,10 @@ document.addEventListener("DOMContentLoaded", () => {
             <h3>${p.name}</h3>
             <span class="tech-badge">${p.tech}</span>
             <p>${p.desc}</p>
+            <span >
             <a href="${p.link}" target="_blank" class="project-link">View on App Store ↗</a>
+            <a href="${p.link}" target="_blank" class="project-link">View more</a>
+            </span>
         `;
         projGrid.appendChild(card);
     });
@@ -238,25 +325,4 @@ ResumeStrings.personalDetails.forEach(detail => {
 document.getElementById("btn-email").onclick = (e) => {
     e.preventDefault();
     sendCV(ResumeStrings.email);
-};
-
-const renderExperienceMeta = (exp) => {
-    if (!exp) return "";
-
-    const hasProducts = exp.products && exp.products.trim() !== "";
-    const hasTechnologies = exp.technologies && exp.technologies.trim() !== "";
-
-    const productsBlock = hasProducts
-        ? `<div class="experience-meta">\n        <span>Products Delivered:</span> ${exp.products}\n    </div>`
-        : "";
-
-    const technologiesBlock = hasTechnologies
-        ? `<div class="experience-meta">\n        <span>Technologies Used:</span> ${exp.technologies}\n    </div>`
-        : "";
-
-    return [
-        productsBlock,
-        '<div class="nested-projects-container"></div>',
-        technologiesBlock
-    ].filter(Boolean).join("\n");
 };

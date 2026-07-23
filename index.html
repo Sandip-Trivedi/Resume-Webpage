@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,18 +9,21 @@
     <link rel="stylesheet" href="modal.css">
     <script src="strings.js"></script>
 </head>
+
 <body>
     <div class="app-container">
         <aside class="sidebar">
             <div class="sidebar-header">
                 <div class="avatar-container">
-                    <img src="https://drive.google.com/thumbnail?id=1tO1EBm4-cXJf8rjVJvpWrWIBNNjd-O4B&sz=w140" alt="Sandip Trivedi" class="sandipPhoto" onerror="this.src=''">
+                    <img src="https://drive.google.com/thumbnail?id=1tO1EBm4-cXJf8rjVJvpWrWIBNNjd-O4B&sz=w140"
+                        alt="Sandip Trivedi" class="sandipPhoto" onerror="this.src=''">
                 </div>
                 <h2 id="profile-name">Loading...</h2>
                 <p id="profile-title" class="subtitle"></p>
             </div>
             <div class="action-panel">
-                <a id="btn-download" download title="Download Resume" class="action-btn">Download CV</a>
+                <button onclick="downloadPDF()">Download PDF1</button>
+
                 <a id="btn-email" title="Send Email" class="action-btn">Email me</a>
                 <a id="btn-call" title="Call Me" class="action-btn">Call me</a>
                 <a id="btn-linkedin" target="_blank" title="LinkedIn Profile" class="action-btn">LinkedIn</a>
@@ -51,5 +55,16 @@
         </main>
     </div>
     <script src="modal.js"></script>
+    <script>
+        function downloadPDF() {
+            // Replace with your actual converted URL
+            const downloadUrl = "https://drive.google.com/file/d/1gB6rWEk0BBe-KBsj6wyE7he4TghzL0UL/view?usp=sharing";
+
+            // Programmatically open the download route
+            window.location.href = downloadUrl;
+        }
+    </script>
+
 </body>
+
 </html>
