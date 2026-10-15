@@ -100,7 +100,8 @@ const ResumeStrings = {
                 "Designed a scalable, thread-safe architecture using Swift Concurrency and integrated BLE health devices (weighing scales, BP apparatuses, ECGs) for secure real-time data sync.",
                 "Built interactive health dashboards with custom Core Animation visualizations and achieved 90% unit test coverage for critical service-layer components."
             ],
-            "link": "https://apple.com"
+            "link": "https://apps.apple.com/in/app/drtrust-360-health-companion/id1483591543",
+            "AppStorelink": ""
         },
         {
             "name": "DIGITAL MATERIAL HUB",
@@ -110,7 +111,7 @@ const ResumeStrings = {
                 "Integrated REST APIs and implemented state management to deliver scalable, maintainable, and high-performance web features.",
                 "Collaborated with UX designers and backend engineers to deliver enterprise-grade user experiences."
             ],
-            "link": "https://website.com"
+            "link": "https://digitalmaterialshub.3m.com/"
         },
         {
             "name": "STANDARD TAP APPLICATOR (BLE/IoT)",
@@ -129,7 +130,7 @@ const ResumeStrings = {
                 "Integrated a custom BLE SDK to establish secure communication between mobile devices and network-enabled cameras during onboarding and provisioning.",
                 "Implemented MVVM architecture and Combine framework to deliver responsive, maintainable, and scalable application workflows."
             ],
-            "link": "https://apple.com"
+            "link": "https://apps.apple.com/us/app/sensera-wifi/id1582532556"
         },
         {
             "name": "HOME CONNECT",

@@ -130,6 +130,26 @@ body {
     opacity: 0.9;
 }
 
+.matcher-launch {
+    position: fixed;
+    top: 0.5rem;
+    right: 0.5rem;
+    z-index: 1000;
+    display: inline-block;
+    padding: 0.5rem 0.75rem;
+    border-radius: 6px;
+    background: var(--accent-color);
+    color: #fff;
+    font-size: 0.9rem;
+    font-weight: 700;
+    text-decoration: none;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.18);
+}
+
+.matcher-launch:hover {
+    opacity: 0.9;
+}
+
 /* Main content window viewport layout offset */
 .main-content {
     margin-left: 320px;

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Compare a job description with Sandip Trivedi's professional profile.">
+    <title>AI Job Match - Sandip Trivedi</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="recruiter.css">
+</head>
+
+<body class="matcher-page">
+    <a class="matcher-launch" href="index.html">Back to Portfolio</a>
+    <main class="matcher-main">
+        <header class="matcher-header">
+            <p class="matcher-eyebrow">Recruiter tool</p>
+            <h1>See how my experience matches your role</h1>
+            <p>Paste a job description to get an AI-assisted comparison with my experience, skills, and projects.</p>
+        </header>
+
+        <form id="match-form" class="matcher-form">
+            <label for="job-description">Job description</label>
+            <textarea id="job-description" name="job-description" rows="12" maxlength="15000"
+                placeholder="Paste the job description here..." required></textarea>
+            <div class="matcher-form-footer">
+                <span>Do not include confidential or personal information.</span>
+                <button id="match-submit" type="submit" class="matcher-submit">Analyze match</button>
+            </div>
+        </form>
+
+        <p id="match-status" class="match-status" role="status" aria-live="polite"></p>
+
+        <section id="match-results" class="match-results" aria-labelledby="results-title" hidden>
+            <div class="score-panel">
+                <p class="matcher-eyebrow">AI-assisted estimate</p>
+                <div class="score-line">
+                    <span id="match-score" class="match-score"></span>
+                    <span class="score-out-of">/ 100 match</span>
+                </div>
+                <p id="match-summary"></p>
+            </div>
+            <div class="match-details">
+                <article>
+                    <h2 id="results-title">Relevant strengths</h2>
+                    <ul id="match-strengths"></ul>
+                </article>
+                <article>
+                    <h2>Potential gaps</h2>
+                    <ul id="match-gaps"></ul>
+                </article>
+            </div>
+            <p id="match-recommendation" class="match-recommendation"></p>
+            <p class="match-disclaimer">This AI-generated estimate is informational only and is not a hiring decision.</p>
+        </section>
+    </main>
+
+    <script src="strings.js"></script>
+    <script src="recruiter.js"></script>
+</body>
+
+</html>

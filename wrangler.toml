@@ -1,0 +1,6 @@
+name = "resume-jd-matcher"
+main = "worker.js"
+compatibility_date = "2025-10-01"
+
+[vars]
+ALLOWED_ORIGIN = "https://sandip-trivedi.github.io"
