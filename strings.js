@@ -6,7 +6,7 @@ const ResumeStrings = {
     email: "sandiptrivedi07@gmail.com",
     linkedin: "https://www.linkedin.com/in/sandip-trivedi-6a558323",
     github: "https://github.com/Sandip-Trivedi", // Placeholder Git link
-    resumeDownloadUrl: "https://drive.google.com/file/d/1gB6rWEk0BBe-KBsj6wyE7he4TghzL0UL/view?usp=sharing", // Add your uploaded PDF link here
+    resumeDownloadUrl: "https://drive.google.com/uc?export=download&id=157uasXkqqSDB82jrbtBq-7RdqW3aBbxT",
     profilePicUrl: "https://drive.google.com/thumbnail?id=1tO1EBm4-cXJf8rjVJvpWrWIBNNjd-O4B&sz=w140",
     navExperience: "Professional Experience",
 
@@ -313,16 +313,18 @@ document.addEventListener("DOMContentLoaded", () => {
         `;
         projGrid.appendChild(card);
     });
+
+    document.getElementById("personal-title").innerText = ResumeStrings.personalDetailsTitle;
+    const personalDiv = document.getElementById("personal-container");
+    ResumeStrings.personalDetails.forEach(detail => {
+        let row = document.createElement("div");
+        row.className = "detail-row";
+        row.innerHTML = `<strong>${detail.label}:</strong> <span>${detail.value}</span>`;
+        personalDiv.appendChild(row);
+    });
+
+    document.getElementById("btn-email").onclick = (e) => {
+        e.preventDefault();
+        sendCV(ResumeStrings.email);
+    };
 });
-document.getElementById("personal-title").innerText = ResumeStrings.personalDetailsTitle;
-const personalDiv = document.getElementById("personal-container");
-ResumeStrings.personalDetails.forEach(detail => {
-    let row = document.createElement("div");
-    row.className = "detail-row";
-    row.innerHTML = `<strong>${detail.label}:</strong> <span>${detail.value}</span>`;
-    personalDiv.appendChild(row);
-});
-document.getElementById("btn-email").onclick = (e) => {
-    e.preventDefault();
-    sendCV(ResumeStrings.email);
-};

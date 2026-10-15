@@ -22,7 +22,7 @@
                 <p id="profile-title" class="subtitle"></p>
             </div>
             <div class="action-panel">
-                <button onclick="downloadPDF()">Download PDF1</button>
+                <a id="btn-download" title="Download Resume" class="action-btn">Download CV</a>
 
                 <a id="btn-email" title="Send Email" class="action-btn">Email me</a>
                 <a id="btn-call" title="Call Me" class="action-btn">Call me</a>
@@ -55,15 +55,6 @@
         </main>
     </div>
     <script src="modal.js"></script>
-    <script>
-        function downloadPDF() {
-            // Replace with your actual converted URL
-            const downloadUrl = "https://drive.google.com/file/d/1gB6rWEk0BBe-KBsj6wyE7he4TghzL0UL/view?usp=sharing";
-
-            // Programmatically open the download route
-            window.location.href = downloadUrl;
-        }
-    </script>
 
 </body>
 
