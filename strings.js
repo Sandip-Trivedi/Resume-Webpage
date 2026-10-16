@@ -222,6 +222,28 @@ document.addEventListener("DOMContentLoaded", () => {
     document.getElementById("btn-email").href = `mailto:${ResumeStrings.email}`;
     document.getElementById("btn-call").href = `tel:${ResumeStrings.phone}`;
     document.getElementById("btn-git").href = ResumeStrings.github;
+    document.getElementById("btn-email").addEventListener("click", event => {
+        event.preventDefault();
+        if (!isMobileDevice()) {
+            alert("Email me is available on mobile devices only.");
+            return;
+        }
+        sendCV(ResumeStrings.email);
+    });
+    document.getElementById("btn-call").addEventListener("click", event => {
+        if (!isMobileDevice()) {
+            event.preventDefault();
+            alert("Call me is available on mobile devices only.");
+        }
+    });
+    document.getElementById("btn-email-cv").addEventListener("click", async event => {
+        event.preventDefault();
+        if (!isMobileDevice()) {
+            alert("Email CV is available on mobile devices only.");
+            return;
+        }
+        await emailCVWithAttachment();
+    });
 
     // About/Summary section
     document.getElementById("summary-title").innerText = ResumeStrings.summaryTitle;
@@ -324,8 +346,48 @@ document.addEventListener("DOMContentLoaded", () => {
         personalDiv.appendChild(row);
     });
 
-    document.getElementById("btn-email").onclick = (e) => {
-        e.preventDefault();
-        sendCV(ResumeStrings.email);
-    };
 });
+
+function isMobileDevice() {
+    const userAgent = navigator.userAgent || "";
+    return Boolean(
+        (navigator.userAgentData && navigator.userAgentData.mobile) ||
+        /Android|iPhone|iPad|iPod|Mobile|IEMobile|Opera Mini|Windows Phone/i.test(userAgent)
+    );
+}
+
+async function emailCVWithAttachment() {
+    const subject = "My CV - Sandip Trivedi";
+    const body = [
+        "Hello,",
+        "",
+        "Please find my CV for your consideration.",
+        "",
+        `CV download link: ${ResumeStrings.resumeDownloadUrl}`,
+        "",
+        "Regards,",
+        ResumeStrings.name
+    ].join("\n");
+
+    if (navigator.share && navigator.canShare && typeof File === "function") {
+        try {
+            const response = await fetch(ResumeStrings.resumeDownloadUrl);
+            if (!response.ok) {
+                throw new Error(`CV download failed with status ${response.status}.`);
+            }
+            const cvFile = new File([await response.blob()], "Sandip_Trivedi_CV.pdf", {
+                type: "application/pdf"
+            });
+            const shareData = { files: [cvFile], title: subject, text: body };
+            if (navigator.canShare(shareData)) {
+                await navigator.share(shareData);
+                return;
+            }
+        } catch (error) {
+            if (error.name === "AbortError") return;
+        }
+    }
+
+    const mailto = `mailto:${ResumeStrings.email}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+    window.location.href = mailto;
+}

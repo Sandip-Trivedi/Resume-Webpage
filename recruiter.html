@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Compare a job description with Sandip Trivedi's professional profile.">
-    <title>AI Job Match - Sandip Trivedi</title>
+    <title>Job Match - Sandip Trivedi</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="recruiter.css">
 </head>
@@ -16,7 +16,7 @@
         <header class="matcher-header">
             <p class="matcher-eyebrow">Recruiter tool</p>
             <h1>See how my experience matches your role</h1>
-            <p>Paste a job description to get an AI-assisted comparison with my experience, skills, and projects.</p>
+            <p>Paste a job description to see how its skills align with my experience.</p>
         </header>
 
         <form id="match-form" class="matcher-form">
@@ -25,21 +25,32 @@
                 placeholder="Paste the job description here..." required></textarea>
             <div class="matcher-form-footer">
                 <span>Do not include confidential or personal information.</span>
-                <button id="match-submit" type="submit" class="matcher-submit">Analyze match</button>
+                <div class="matcher-actions">
+                    <button id="static-match" type="button" class="matcher-submit matcher-submit-secondary">
+                        Skill Weight Analysis
+                    </button>
+                    <button id="match-submit" type="button" class="matcher-submit">AI match</button>
+                </div>
             </div>
         </form>
 
         <p id="match-status" class="match-status" role="status" aria-live="polite"></p>
+        <progress id="static-match-progress" class="static-match-progress" max="10" value="0"
+            aria-label="Static match processing progress" hidden></progress>
 
         <section id="match-results" class="match-results" aria-labelledby="results-title" hidden>
             <div class="score-panel">
-                <p class="matcher-eyebrow">AI-assisted estimate</p>
+                <p id="match-type" class="matcher-eyebrow">AI-assisted estimate</p>
                 <div class="score-line">
                     <span id="match-score" class="match-score"></span>
-                    <span class="score-out-of">/ 100 match</span>
+                    <span class="score-out-of">match</span>
                 </div>
                 <p id="match-summary"></p>
             </div>
+            <section id="match-experience" class="match-experience" aria-labelledby="experience-title" hidden>
+                <h2 id="experience-title">Experience requirement fit</h2>
+                <ul id="match-experience-list"></ul>
+            </section>
             <div class="match-details">
                 <article>
                     <h2 id="results-title">Relevant strengths</h2>
@@ -50,11 +61,55 @@
                     <ul id="match-gaps"></ul>
                 </article>
             </div>
-            <p id="match-recommendation" class="match-recommendation"></p>
-            <p class="match-disclaimer">This AI-generated estimate is informational only and is not a hiring decision.</p>
+            <div class="match-disclaimer-row">
+                <p id="match-disclaimer" class="match-disclaimer">This AI-generated estimate is informational only and
+                    is
+                    not a hiring decision.</p>
+                <div id="match-calculation" class="match-calculation" hidden>
+                    <button id="match-calculation-toggle" class="match-calculation-toggle" type="button"
+                        aria-expanded="false" aria-controls="match-calculation-data">
+                        Show mathematical data
+                    </button>
+                    <div id="match-calculation-data" class="match-calculation-data" hidden></div>
+                </div>
+            </div>
         </section>
     </main>
 
+    <dialog id="ai-match-dialog" class="ai-match-dialog" aria-labelledby="ai-match-dialog-title">
+        <h2 id="ai-match-dialog-title">AI matching is under development</h2>
+        <p>The AI-powered job description comparison is not available yet. You can use Skill Weight Analysis in the
+            meantime.</p>
+        <button id="ai-match-dialog-close" type="button" class="matcher-submit">Got it</button>
+    </dialog>
+
+    <script id="skill-weightages" type="application/json">
+        [
+            { "skill": "iOS", "weightage": "100%", "keywords": ["iOS", "iPhone", "iPad"] },
+            { "skill": "Swift", "weightage": "100%", "keywords": ["Swift"] },
+            { "skill": "SwiftUI", "weightage": "100%", "keywords": ["SwiftUI"] },
+            { "skill": "UIKit", "weightage": "85%", "keywords": ["UIKit"] },
+            { "skill": "BLE", "weightage": "85%", "keywords": ["BLE", "Bluetooth Low Energy"] },
+            { "skill": "IoT", "weightage": "85%", "keywords": ["IoT", "Internet of Things"] },
+            { "skill": "Mobile architecture", "weightage": "85%", "keywords": ["mobile architecture", "software architecture", "solution architecture"] },
+            { "skill": "MVVM", "weightage": "85%", "keywords": ["MVVM"] },
+            { "skill": "Team leadership", "weightage": "85%", "keywords": ["team leadership", "technical leadership", "engineering leadership", "mentoring"] },
+            { "skill": "Project management", "weightage": "80%", "keywords": ["project management", "project manager", "delivery management"] },
+            { "skill": "Objective-C", "weightage": "80%", "keywords": ["Objective-C", "Objective C"] },
+            { "skill": "React.js", "weightage": "75%", "keywords": ["React.js", "React JS", "React"] },
+            { "skill": "JavaScript", "weightage": "75%", "keywords": ["JavaScript", "Java Script"] },
+            { "skill": "REST APIs", "weightage": "75%", "keywords": ["REST API", "REST APIs"] },
+            { "skill": "Agile", "weightage": "75%", "keywords": ["Agile", "Scrum"] },
+            { "skill": "CI/CD", "weightage": "70%", "keywords": ["CI/CD", "continuous integration", "continuous delivery"] },
+            { "skill": "TypeScript", "weightage": "70%", "keywords": ["TypeScript", "Type Script"] },
+            { "skill": "AWS", "weightage": "65%", "keywords": ["AWS", "Amazon Web Services"] },
+            { "skill": "React Native", "weightage": "65%", "keywords": ["React Native"] },
+            { "skill": "Android", "weightage": "55%", "keywords": ["Android"] },
+            { "skill": "Java", "weightage": "50%", "keywords": ["Java"] },
+            { "skill": "Kotlin", "weightage": "50%", "keywords": ["Kotlin"] },
+            { "skill": "Flutter", "weightage": "40%", "keywords": ["Flutter"] }
+        ]
+    </script>
     <script src="strings.js"></script>
     <script src="recruiter.js"></script>
 </body>
