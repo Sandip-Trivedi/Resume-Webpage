@@ -242,7 +242,7 @@ document.addEventListener("DOMContentLoaded", () => {
             alert("Email CV is available on mobile devices only.");
             return;
         }
-        await emailCVWithAttachment();
+        openCVEmail();
     });
 
     // About/Summary section
@@ -356,37 +356,18 @@ function isMobileDevice() {
     );
 }
 
-async function emailCVWithAttachment() {
+function openCVEmail() {
     const subject = "My CV - Sandip Trivedi";
     const body = [
         "Hello,",
         "",
-        "Please find my CV for your consideration.",
+        "Please find my CV at the link below for your consideration.",
         "",
         `CV download link: ${ResumeStrings.resumeDownloadUrl}`,
         "",
         "Regards,",
         ResumeStrings.name
     ].join("\n");
-
-    if (navigator.share && navigator.canShare && typeof File === "function") {
-        try {
-            const response = await fetch(ResumeStrings.resumeDownloadUrl);
-            if (!response.ok) {
-                throw new Error(`CV download failed with status ${response.status}.`);
-            }
-            const cvFile = new File([await response.blob()], "Sandip_Trivedi_CV.pdf", {
-                type: "application/pdf"
-            });
-            const shareData = { files: [cvFile], title: subject, text: body };
-            if (navigator.canShare(shareData)) {
-                await navigator.share(shareData);
-                return;
-            }
-        } catch (error) {
-            if (error.name === "AbortError") return;
-        }
-    }
 
     const mailto = `mailto:${ResumeStrings.email}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
     window.location.href = mailto;
