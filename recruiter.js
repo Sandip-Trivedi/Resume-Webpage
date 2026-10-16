@@ -1,4 +1,4 @@
-const MATCHER_API_URL = "https://resume-jd-matcher.ai-resume-match.workers.dev/api/match";
+const MATCHER_API_URL = "https://resume-jd-matcher.ai-resume-match.workers.dev";
 
 document.addEventListener("DOMContentLoaded", () => {
     const form = document.getElementById("match-form");
